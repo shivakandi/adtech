@@ -30,6 +30,9 @@ public class WebAnalyzer {
 	//We have a hashmap to store the list of pageurls.
 	// We define a maxheap wherein the corresponding values are the integer 
 	//vales of the hashmap and we retrieve as many maxheap as possible.
+		
+	// I wanted to dfine a maxheap with delete functionality but thought to use 
+		//priority queue as library. Using comparator
 	HashMap<String, Integer> pages = new HashMap<String, Integer>();
 	PriorityQueue<PageStruct> queue = new PriorityQueue<>(1000,
 			new Comparator<PageStruct>() {
