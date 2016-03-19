@@ -13,7 +13,7 @@ import java.util.NoSuchElementException;
 import java.util.PriorityQueue;
 
 public class WebAnalyzer {
-		
+		//Struct to maintain heap
 		public class PageStruct{
 			Integer count;
 			String name;
@@ -34,7 +34,9 @@ public class WebAnalyzer {
 	// I wanted to dfine a maxheap with delete functionality but thought to use 
 		//priority queue as library. Using comparator
 	HashMap<String, Integer> pages = new HashMap<String, Integer>();
-	PriorityQueue<PageStruct> queue = new PriorityQueue<>(1000,
+	PriorityQueue<PageStruct> queue = new PriorityQueue<>(1000, // this limits the top "n" to 1000 and
+	//can be build using heap implementation in tress.
+	//this is the drawback of using util's priorityqueue.
 			new Comparator<PageStruct>() {
 		public int compare(PageStruct page1, PageStruct page2) {
             return page1.count >= page2.count ? -1:1;
